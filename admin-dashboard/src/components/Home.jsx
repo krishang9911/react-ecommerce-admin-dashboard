@@ -7,8 +7,6 @@ const salesData = [
   { month: 'Mar', revenue: 5100 },
   { month: 'Apr', revenue: 4700 },
   { month: 'May', revenue: 6300 },
-  { month: 'Jun', revenue: 5800 },
-  { month: 'Jul', revenue: 7200 },
 ]
 
 // Fake data for pie chart

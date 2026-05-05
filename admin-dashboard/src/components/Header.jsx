@@ -1,20 +1,29 @@
 const Header = ({ active, darkMode, setDarkMode }) => {
+  const today = new Date().toLocaleDateString('en-IN', { weekday: 'short', day: 'numeric', month: 'short' })
+
   return (
     <div className="header">
-      <div>
-        <h2>{active}</h2>
-        <p className="subtitle">Welcome back, Admin 👋</p>
+      <div className="header-left">
+        <div className="header-title">{active}</div>
+        <div className="header-sub">Welcome back, Admin 👋 · {today}</div>
       </div>
 
       <div className="header-right">
-        <button
-          className="theme-btn"
-          onClick={() => setDarkMode(!darkMode)}
-        >
-          {darkMode ? "🌙" : "☀️"}
+        <div className="header-search">
+        <span className="search-icon">🔍</span>
+        <input placeholder="Search anything..." />
+      </div>
+
+        <button className="icon-btn" title="Notifications">
+          🔔
+          <span className="badge-dot"></span>
         </button>
 
-        <div className="avatar">AD</div>
+        <button className="icon-btn" onClick={() => setDarkMode(!darkMode)} title="Toggle theme">
+          {darkMode ? '☀️' : '🌙'}
+        </button>
+
+        <div className="header-avatar">AD</div>
       </div>
     </div>
   )
